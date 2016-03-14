@@ -9,6 +9,6 @@ function key = toKey( key )
     for i=[5 12 17 24]
         key(key>i)=key(key>i)-1;
     end
-    
+    %hej
 end
 
