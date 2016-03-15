@@ -1,6 +1,6 @@
 %loading the picture where we have our song coded
-pic = imread('MARIO.png');
-space=.12;
+pic = imread('SKAFFARE.png');
+
 fs=getFreq();
 
 pic = rgb2gray(pic);
@@ -41,20 +41,24 @@ disp('mixing');
 playable=normalize(2*track1+track2+track3);
 
 [H,W]=size(playable);
-offset=floor(space*getFreq);
                 %length of song, last notes ring out time
-zerovector=zeros(offset*W+      H*2,1);
+playthis=zeros(getSpacing()*W+      H*2,1);
 
 %
 for index=1:W
-    place=offset*(index-1)+1;
-    zerovector(place:place+H-1)=zerovector(place:place+H-1)+playable(:,index);
-    
+    place=getSpacing().*(index-1)+1;
+    playthis(place:place+H-1)=playthis(place:place+H-1)+playable(:,index);   
 end
 
-playthis=normalize(zerovector);
+
+playthis=normalize(playthis);
 disp('done, playing song');
 sound(playthis,getFreq());
+
+disp('saving song');
+filename='skaffarepolskan.wav';
+audiowrite(filename,playthis,getFreq());
+
 %playing
 % for index=1:W
 %     tic
@@ -62,6 +66,6 @@ sound(playthis,getFreq());
 %     sound(playable(:,index),fs);
 %     
 %     
-%     pause(space-toc);    
+%     pause(getSpacing)./getFreq());    
 % end
 

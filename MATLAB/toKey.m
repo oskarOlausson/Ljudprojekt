@@ -7,7 +7,7 @@ function key = toKey( key )
     %[5 11 17 23] for mixolydian
     %[5 12 17 24] for major
     
-    for i=[2 8 14 20]
+    for i=[5 12 17 24]
         key(key>i)=key(key>i)-1;
     end
     %hej
