@@ -7,9 +7,6 @@ function out = expRampDown( in, power )
 
     a=log(0.001)/length(in);
     ramp = exp(1).^(x.*a);
-    
-    size(ramp)
-    size(in)
 
     %combine with sound and normalize
     out = in.* ramp.^power;

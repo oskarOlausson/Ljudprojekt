@@ -1,4 +1,4 @@
-function out = fadeOut( in , duration )
+function out = fadeOut( in , duration, power )
 %FADEOUT Summary of this function goes here
 %   Detailed explanation goes here
     b=length(in)-duration;
@@ -11,7 +11,7 @@ function out = fadeOut( in , duration )
     ramp = min(1,exp(1).^(x*a));
 
     %combine with sound and normalize
-    out = in.* ramp;
+    out = in.* ramp.^power;
     out = normalize(out);
     
 end

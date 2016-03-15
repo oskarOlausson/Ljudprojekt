@@ -1,10 +1,10 @@
 %loading the picture where we have our song coded
-
-pic = imread('SONG.png');
-space=.15;
+pic = imread('MARIO.png');
+space=.12;
 fs=getFreq();
 
 pic = rgb2gray(pic);
+
 disp('reading picture')
 [guitar, guitar2, base] = imageToChroma(pic);
 
@@ -12,10 +12,16 @@ guitar=toKey(guitar);
 guitar2=toKey(guitar2);
 base=toKey(base);
 
+
+%tonartshöjning
+% guitar=[guitar raise(guitar,1)];
+% guitar2=[guitar2 raise(guitar2,1)];
+% base=[zeros(1,length(base))-1 raise(base,1)];
+
 disp('making tones');
 
 key=getKeyTones(0,1);
-keyLow=getKeyTones(-1,0);
+keyLow=getKeyTones(-1,0); 
 
 track1=zeros(fs*4,length(guitar));
 track2=zeros(fs*4,length(guitar));
@@ -32,18 +38,30 @@ end
 
 disp('mixing');
 %mixing together
-playable=normalize((track1*2)+track2+track3);
+playable=normalize(2*track1+track2+track3);
 
+[H,W]=size(playable);
+offset=floor(space*getFreq);
+                %length of song, last notes ring out time
+zerovector=zeros(offset*W+      H*2,1);
 
-
-disp('done, playing song')
-[~,W]=size(playable);
-%playing
+%
 for index=1:W
-    tic
+    place=offset*(index-1)+1;
+    zerovector(place:place+H-1)=zerovector(place:place+H-1)+playable(:,index);
     
-    sound(playable(:,index),fs);
-    
-    pause(space-toc);    
 end
+
+playthis=normalize(zerovector);
+disp('done, playing song');
+sound(playthis,getFreq());
+%playing
+% for index=1:W
+%     tic
+% 
+%     sound(playable(:,index),fs);
+%     
+%     
+%     pause(space-toc);    
+% end
 

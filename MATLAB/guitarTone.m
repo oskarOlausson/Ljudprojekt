@@ -11,7 +11,7 @@ function tone = guitarTone( fret, octave )
     in=zeros(fs*4,1);
 
     %minus one is a silent tone
-    if fret==-1
+    if fret==-100
         tone=in;
         return
     end

@@ -7,7 +7,7 @@ function [guitar, guitar2, base] = imageToChroma( pic )
 
     [H, W] = size(pic);
 
-    guitar= zeros(1, W)-1;
+    guitar= zeros(1, W)-100;
     guitar2  = guitar;
     base = guitar;
 

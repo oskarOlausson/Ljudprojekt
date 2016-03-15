@@ -11,15 +11,16 @@ function tone = newTone( fret, octave )
     in=zeros(fs*4,1);
 
     %minus one is a silent tone
-    if fret==-1
+    if fret==-100
         tone=in;
+        disp('skipping');
         return
     end
 
     len=30;
-    in(1:len,1)=expRampDown(ones(len,1),10);
+    in(1:len,1)=randn(len,1);%expRampDown(ones(len,1),10);
 
-    z=tf([1 0],[1],fs);
+    z=tf([1 0],1,fs);
 
     R=0.999999;
     deltaAim=0.5;
@@ -38,13 +39,16 @@ function tone = newTone( fret, octave )
     a = sin((1-delta)*w0/2) / sin((1+delta)*w0/2);
     All = (z^(-1)+a)/(1+a*z^(-1));
     Low = 0.5*(1+z^(-1));
+    Kam = (R^L)*(z^(-L));
 
-    Combined = z^L*Low*All / (z^L-All*Low*R^L);
+    Combined = Low*All / (1-All*Low*Kam);
 
     [num, den] = tfdata(Combined,'v');
 
     tone = filter(num,den,in);
-
+    
+    tone = fadeOut(tone,fs*4-fs*0.12,2);
+   
     tone = normalize(tone);
 
 end
