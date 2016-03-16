@@ -1,5 +1,5 @@
 %loading the picture where we have our song coded
-pic = imread('chromatic.png');
+pic = imread('onetone.png');
 
 fs=getFreq();
 
@@ -8,9 +8,9 @@ pic = rgb2gray(pic);
 disp('reading picture')
 [guitar, guitar2, base] = imageToChroma(pic);
 
-guitar=toKey(guitar);
-guitar2=toKey(guitar2);
-base=toKey(base);
+%guitar=toKey(guitar);
+%guitar2=toKey(guitar2);
+%base=toKey(base);
 
 
 %tonartsh?jning
@@ -56,8 +56,16 @@ disp('done, playing song');
 sound(playthis,getFreq());
 
 disp('saving song');
-% filename='skaffarepolskan.wav';
-% audiowrite(filename,playthis,getFreq());
+ filename='onetone.wav';
+ audiowrite(filename,playthis,getFreq());
+
+ [in, FS]=audioread('onetone.wav');
+N = length(in)
+df = FS/N;
+dt = [-FS/2 : df : FS/2-df];
+shift= fftshift(abs(fft(in)))./N;
+
+plot (dt, shift,'r'); axis([0 20000 0 0.01]);
 
 %playing
 % for index=1:W
