@@ -38,7 +38,7 @@ end
 
 disp('mixing');
 %mixing together
-playable=normalize(2*track1+track2+track3);
+playable=normalize(1.5*track1+track2+track3);
 
 [H,W]=size(playable);
                 %length of song, last notes ring out time
@@ -56,8 +56,8 @@ disp('done, playing song');
 sound(playthis,getFreq());
 
 disp('saving song');
-filename='skaffarepolskan.wav';
-audiowrite(filename,playthis,getFreq());
+% filename='skaffarepolskan.wav';
+% audiowrite(filename,playthis,getFreq());
 
 %playing
 % for index=1:W
