@@ -1,11 +1,9 @@
 \documentclass[12pt]{article}
 
-\usepackage{pdfpages}
 \usepackage{listings}
 \usepackage[swedish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{float}
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{times}
@@ -55,6 +53,7 @@
   tabsize=2,	                   % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+
 \begin{document}
 \lstset{language=Matlab}
 \maketitle
@@ -73,11 +72,28 @@ tonernas spacing.
 Vi skapade därför ett tonbibliotek och satte samman tonerna till en låt.
 Därefter sparade vi låten till HD.
 
-%\begin{figure}[!htb]
-%    \centering
-%    \includegraphics[scale=0.5]{grafupg15.pdf}
-%    \caption{Bild på låtens ton och tonernas spacing}
-%\end{figure}
+
+\section{Genomförande}
+
+Uppgiften utfördes genom att man utvecklade ett program i Matlab som läser in en
+bild, konverterar bilden till information om vilka toner som ska spelas upp och
+tonernas spacing. Låten som valdes var en gotländsk polska som heter skaffare,
+bilden som beskriver låten syns i figur~\ref{fig:skaffare}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=1.5]{../SKAFFARE.png}
+    \caption{Bilden som innehåller informationen om låtens toner och spacing}
+    \label{fig:skaffare}
+\end{figure}
+
+Varje pixel representerar en ton, färger som har RGB-värden högre än
+$(200,200,200)$ ignoreras och en helsvart pixel läses in som en halvton högre än
+pixels normala värde. 
+
+Programmet accepterar upp till 3 spår. Varje spår är 15 höjd och börjar på
+varandra. Pixeln högst upp i varje spår representerar högsta tonen och pixeln
+lägst ner i varje spår representerar lägsta tonen.
 
 
 \section{Resultat}

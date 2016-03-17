@@ -56,24 +56,14 @@ disp('done, playing song');
 sound(playthis,getFreq());
 
 disp('saving song');
-%  filename='skaffare.wav';
-%  audiowrite(filename,playthis,getFreq());
-% 
-%  [in, FS]=audioread('onetone.wav');
+ filename='skaffare.wav';
+ audiowrite(filename,playthis,getFreq());
+
+ [in, FS]=audioread('skaffare.wav');
 % N = length(in)
 % df = FS/N;
 % dt = [-FS/2 : df : FS/2-df];
 % shift= fftshift(abs(fft(in)))./N;
 % 
 % plot (dt, shift,'r'); axis([0 20000 0 0.01]);
-
-%playing
-% for index=1:W
-%     tic
-% 
-%     sound(playable(:,index),fs);
-%     
-%     
-%     pause(getSpacing)./getFreq());    
-% end
 
