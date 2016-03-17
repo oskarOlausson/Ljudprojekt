@@ -27,7 +27,5 @@ function [guitar, guitar2, base] = imageToChroma( pic )
             end
         end
     end
-
-
 end
 
