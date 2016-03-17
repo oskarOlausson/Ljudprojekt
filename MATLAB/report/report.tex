@@ -7,13 +7,13 @@
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{times}
-
+\usepackage{url}
 \usepackage{color}
 
 \title{Rapport för laboration i digital ljudsyntes}
 
 \author{
-    Marc Coquand \\
+    \textbf {Marc Coquand} (författare) \\
     maco0044 \\
     mcoquand@gmail.com\\
     \and
@@ -95,22 +95,53 @@ Programmet accepterar upp till 3 spår. Varje spår är 15 höjd och börjar på
 varandra. Pixeln högst upp i varje spår representerar högsta tonen och pixeln
 lägst ner i varje spår representerar lägsta tonen.
 
-Efter att programmet konverterat bilden genererar den toner som 
+Efter att programmet konverterat bilden så läser den in varje spår och därefter
+konverterar det till rätt skala (bilden är i kromatisk skala annars). Där skapar
+den också tonerna med funktionen \texttt{newTone.m} vars källkod finns i bilagor.
+
+Sist lägger den ihop alla kanaler till ett spår till en låt och normaliserar.
+Därefter sparar den låten.
+
+Beskrivning om teorin bakom tonljuden hittas i bilagor.
 
 \section{Resultat}
 
+Den färdiga låten hittas på \url{https://github.com/oskarOlausson/Ljudprojekt/}
+i \texttt{MATLAB/skaffare.mp3}. 
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.5]{onetone.pdf}
+    \caption{Fourierspektrum av en grundton skapad med programmet.}
+    \label{fig:onetone}
+\end{figure}
+
 \section{Slutsats}
 
+För att visa att tonerna var rena gjordes ett fourierspektrum av grundtonen som
+visas i figur~\ref{fig:onetone}. Detta gjordes på alla toner men det är inte med
+i rapporten.
+
 \section{Reflektion}
+
+Tycker det är konstigt att denna laborationen är så tätt inpå labration 6.
 
 \section{Bilagor, matlabkod}
 \label{sec:bilagor}
 
-%Exempel
-%\subsection{Uppgift 1}
-%\label{sub:uppgift_a1}
-%\lstinputlisting{upg11.m}
+\subsection{Program}
 
+\lstinputlisting{../fadeOut.m}
+\lstinputlisting{../fastPlayer.m}
+\lstinputlisting{../fastTone.m}
+\lstinputlisting{../filtered.m}
+\lstinputlisting{../getFreq.m}
+\lstinputlisting{../getKeyTones.m}
+\lstinputlisting{../getSpacing.m}
+\lstinputlisting{../imageToChroma.m}
+\lstinputlisting{../newTone.m}
+\lstinputlisting{../normalize.m}
+\lstinputlisting{../raise.m}
 
 
 \end{document}

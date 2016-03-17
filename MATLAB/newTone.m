@@ -1,6 +1,6 @@
 function tone = newTone( fret, octave )
     %GETTONE returns a tone that hopefully sounds like a guitar tone
-    %Works by creating a frequencyresponse for an insignal
+    %Works by creating a frequency response for an insignal
 
 
     n  = 12*octave+fret;

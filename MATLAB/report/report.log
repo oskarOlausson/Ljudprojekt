@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.30)  17 MAR 2016 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.30)  17 MAR 2016 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -411,6 +411,10 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 
@@ -507,13 +511,12 @@ e
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 59.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 60.
 
-(./report.toc
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
-)
+(./report.toc)
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
@@ -533,25 +536,65 @@ den hög-re än $\OT1/cmr/m/n/12 (200\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 200\OML/c
 mm/m/it/12 ; \OT1/cmr/m/n/12 200)$
  []
 
-[2 <../SKAFFARE.png>] (./report.aux) ) 
-Here is how much of TeX's memory you used:
- 4991 strings out of 493089
- 68668 string characters out of 6134841
- 171663 words of memory out of 5000000
- 8387 multiletter control sequences out of 15000+600000
- 24594 words of font info for 43 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 38i,7n,36p,257b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts
-/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 100.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (59.97458pt too wide) in paragraph at lines 109--111
+\T1/ptm/m/n/12 Den fär-di-ga lå-ten hit-tas på $\T1/pcr/m/n/12 https : / / gith
+ub . com / oskarOlausson / Ljudprojekt/$
+ []
 
-Output written on report.pdf (2 pages, 46965 bytes).
+<onetone.pdf, id=10, 473.91948pt x 124.27248pt>
+File: onetone.pdf Graphic file (type pdf)
+ <use onetone.pdf>
+Package pdftex.def Info: onetone.pdf used on input line 114.
+(pdftex.def)             Requested size: 236.95915pt x 62.13608pt.
+ [2 <../SKAFFARE.png>]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 122.
+
+
+LaTeX Warning: Reference `fig:onetone' on page 3 undefined on input line 122.
+
+(../fadeOut.m
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 11.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+
+[3 <./onetone.pdf>]) (../fastPlayer.m [4]) (../fastTone.m) (../filtered.m
+[5]) (../getFreq.m) (../getKeyTones.m [6]) (../getSpacing.m)
+(../imageToChroma.m [7]) (../newTone.m) (../normalize.m) [8] (../raise.m)
+[9] (./report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6052 strings out of 493089
+ 79851 string characters out of 6134841
+ 339759 words of memory out of 5000000
+ 9399 multiletter control sequences out of 15000+600000
+ 33689 words of font info for 52 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,7n,36p,257b,2189s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/urw/times/utmr8a.pfb>
+Output written on report.pdf (9 pages, 140151 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
